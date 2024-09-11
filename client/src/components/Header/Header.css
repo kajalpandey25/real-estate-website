@@ -1,43 +1,130 @@
-.h-wrapper {
-  z-index: 99;
-  position: sticky;
-  top: 0;
+/* Top Header Section */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: white
 }
-.h-container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: var(--secondary);
+
+.left-section .logo {
+  height: 30px;
+}
+
+.middle-section {
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 14px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 14px;
+}
+
+.icon {
+  margin: 0 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+.icon {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 20px; /* Adjust the size of the icon */
+  color: #000; /* Icon color */
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.left-section, .middle-section, .right-section {
+  display: flex;
+  align-items: center;
+}
+
+.middle-section {
+  gap: 15px; /* Space between phone and WhatsApp icon */
+}
+
+/* Main Navigation Section */
+.h-wrapper {
+  background-color: black;
+  color: white;
+  padding: 0px 0;
+  margin-left: 1000px;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .h-menu {
-  gap: 2rem;
+  display: flex;
+  gap: 20px;
 }
-.h-menu > *:hover {
+
+.h-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.h-menu a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: #a6cc40;
+  color: black;
+  border: none;
+  padding: 5px 15px;
+  font-size: 14px;
   cursor: pointer;
 }
+
+.button:hover {
+  background-color: #8fbf2d;
+}
+
 .menu-icon {
   display: none;
 }
 
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
+
   .h-menu {
-    color: var(--black);
+    display: none; /* Default hidden on small screens */
     position: absolute;
-    gap: 2rem;
-    font-weight: 500;
-    flex-direction: column;
-    right: 4rem;
-    top: 3rem;
-    background: white;
-    display: flex;
-    border-radius: 10px;
-    transition: all 200ms ease;
-    align-items: flex-start;
-    padding: 3rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    top: 50px;
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .h-menu.open {
+    display: block; /* Show when open */
+  }
+
+  .h-menu a {
+    display: block;
+    margin: 5px 0;
   }
 }
+

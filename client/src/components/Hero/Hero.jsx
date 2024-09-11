@@ -1,6 +1,6 @@
 import "./Hero.css";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import SearchBar from "../SearchBar/SearchBar";
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
         {/* left side */}
         <div className="flexColStart hero-left">
           <div className="hero-title">
-            <div className="orange-circle" />
+            <div className="green-circle" />
             <motion.h1
             initial={{ y: "2rem", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -18,14 +18,20 @@ const Hero = () => {
               type: "ease-in",
             }}
             >
-              Discover <br />
-              Most Suitable
-              <br /> Property
+            <span style={{ color: "gray", fontSize: "3rem", fontWeight: "bold" }}>
+                Find Your Place,
+              </span>
+              <span style={{ color: "green", fontSize: "3rem", fontWeight: "bold" }}>
+                Make
+              </span>
+              <br />
+              <span style={{ color: "green", fontSize: "3rem", fontWeight: "bold" }}>
+                It Home
+              </span>
             </motion.h1>
           </div>
           <div className="flexColStart secondaryText flexhero-des">
-            <span>Find a variety of properties that suit you very easilty</span>
-            <span>Forget all difficulties in finding a residence for you</span>
+            <span style={{ color: "green",fontSize: "1rem", fontWeight: "bold"}}>Please Select Your Category</span>
           </div>
 
           <SearchBar/>
@@ -65,7 +71,7 @@ const Hero = () => {
             }}
             className="image-container"
           >
-            <img src="./hero-image.png" alt="houses" />
+            <img src="./hero-image.jpg" alt="houses" />
           </motion.div>
         </div>
       </div>
