@@ -5,8 +5,10 @@ import Footer from "../components/Footer/Footer";
 import GetStarted from "../components/GetStarted/GetStarted";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
+import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 import Residencies from "../components/Residencies/Residencies";
 import Value from "../components/Value/Value";
+import Carousel from '../components/Carousel/Carousel';
 
 
 const Website = () => {
@@ -17,6 +19,8 @@ const Website = () => {
       <Hero />
     </div>
     <Companies />
+    <FeaturedProjects />
+    <Carousel/>
     <Residencies/>
     <Value/>
     <Contact/>

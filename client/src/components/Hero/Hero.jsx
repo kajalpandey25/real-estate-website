@@ -11,30 +11,63 @@ const Hero = () => {
           <div className="hero-title">
             <div className="green-circle" />
             <motion.h1
-            initial={{ y: "2rem", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 2,
-              type: "ease-in",
-            }}
+              initial={{ y: "2rem", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 2,
+                type: "ease-in",
+              }}
             >
-            <span style={{ color: "gray", fontSize: "3rem", fontWeight: "bold" }}>
+              <span
+                style={{ color: "gray", fontSize: "3rem", fontWeight: "bold" }}
+              >
                 Find Your Place,
               </span>
-              <span style={{ color: "green", fontSize: "3rem", fontWeight: "bold" }}>
+              <span
+                style={{ color: "green", fontSize: "3rem", fontWeight: "bold" }}
+              >
                 Make
               </span>
               <br />
-              <span style={{ color: "green", fontSize: "3rem", fontWeight: "bold" }}>
+              <span
+                style={{ color: "green", fontSize: "3rem", fontWeight: "bold" }}
+              >
                 It Home
               </span>
             </motion.h1>
           </div>
           <div className="flexColStart secondaryText flexhero-des">
-            <span style={{ color: "green",fontSize: "1rem", fontWeight: "bold"}}>Please Select Your Category</span>
+            <span
+              style={{ color: "green", fontSize: "1rem", fontWeight: "bold" }}
+            >
+              Please Select Your Category
+            </span>
+            {/* Buyer and Seller Options */}
+            <div
+              className="flexRowStart optionsContainer"
+              style={{ marginTop: "10px", gap: "30px"}}
+            >
+              {/* Buyer Option */}
+              <span className="optionItem">
+                <i
+                  className="fas fa-user"
+                  style={{marginRight: "8px", color: "black" }}
+                ></i>
+                <span>BUYER</span>
+              </span>
+
+              {/* Seller Option */}
+              <span className="optionItem">
+                <i
+                  className="fas fa-store"
+                  style={{ marginLeft:"20px", marginRight: "8px", color: "black" }}
+                ></i>
+                <span>SELLER</span>
+              </span>
+            </div>
           </div>
 
-          <SearchBar/>
+          <SearchBar />
 
           <div className="flexCenter stats">
             <div className="flexColCenter stat">

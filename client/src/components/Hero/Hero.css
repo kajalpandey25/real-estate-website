@@ -4,7 +4,6 @@
   z-index: 1;
   padding-bottom: 2rem;
   background-color: white;
-
 }
 
 
@@ -26,6 +25,7 @@
   font-weight: 600;
   font-size: 3.8rem;
   line-height: 4rem;
+  margin-bottom: 0px;
 }
 .green-circle {
   height: 4rem;
