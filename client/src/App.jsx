@@ -1,7 +1,6 @@
 import { Suspense, useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import Website from "./pages/Website";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Properties from "./pages/Properties/Properties";

@@ -9,6 +9,8 @@ import FeaturedProjects from '../components/FeaturedProjects/FeaturedProjects';
 import Residencies from "../components/Residencies/Residencies";
 import Value from "../components/Value/Value";
 import Carousel from '../components/Carousel/Carousel';
+import CommercialProjects from '../components/Commercial/Commercial';
+import ProjectStats from '../components/ProjectStats/ProjectStats';
 
 
 const Website = () => {
@@ -22,6 +24,8 @@ const Website = () => {
     <FeaturedProjects />
     <Carousel/>
     <Residencies/>
+    <CommercialProjects/>
+    <ProjectStats/>
     <Value/>
     <Contact/>
     <GetStarted/>
