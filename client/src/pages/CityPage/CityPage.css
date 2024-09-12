@@ -1,0 +1,29 @@
+.city-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .city-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .city-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .city-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .city-item:hover {
+    background-color: #e0e0e0;
+  }
+  

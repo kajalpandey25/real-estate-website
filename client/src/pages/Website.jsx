@@ -11,6 +11,8 @@ import Value from "../components/Value/Value";
 import Carousel from '../components/Carousel/Carousel';
 import CommercialProjects from '../components/Commercial/Commercial';
 import ProjectStats from '../components/ProjectStats/ProjectStats';
+import YoutubeVideos from '../components/YoutubeVideos/YoutubeVideos';
+import Testimonials from '../components/Testimonials/Testimonials';
 
 
 const Website = () => {
@@ -26,6 +28,9 @@ const Website = () => {
     <Residencies/>
     <CommercialProjects/>
     <ProjectStats/>
+    <YoutubeVideos />
+    <Carousel/>
+    <Testimonials/>
     <Value/>
     <Contact/>
     <GetStarted/>
