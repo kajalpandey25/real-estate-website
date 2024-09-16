@@ -9,23 +9,23 @@ HomeScope is a comprehensive real-estate platform designed to streamline propert
 
 **Homepage:**
 
-![Homepage Screenshot](../real-estate-website/client/public/home.png)
-![Homepage Screenshot](../real-estate-website/client/public/Screenshot%20(448).png)
+![Homepage Screenshot](https://github.com/kajalpandey25/real-estate-website/blob/main/client/public/home.png)
+![Homepage Screenshot](https://github.com/kajalpandey25/real-estate-website/blob/main/client/public/Screenshot%20(448).png)
 
 **Featured Projects Page:**
-![Featured Projects Screenshot](../real-estate-website/client/public/property.png)
+![Featured Projects Screenshot](https://github.com/kajalpandey25/real-estate-website/blob/main/client/public/property.png)
 
 **Property Listing Page:**
 
-![Property Listing](../real-estate-website/client/public/property-list.png)
+![Property Listing](https://github.com/kajalpandey25/real-estate-website/blob/main/client/public/property-list.png)
 
 **Project Page:**
 
-![Project Page](../real-estate-website/client/public/project.png)
+![Project Page](https://github.com/kajalpandey25/real-estate-website/blob/main/client/public/project.png)
 
 **Add Property Page:**
 
-![Add Property](../real-estate-website/client/public/AddProperty.png)
+![Add Property](https://github.com/kajalpandey25/real-estate-website/blob/main/client/public/AddProperty.png)
 
 ## Features
 
