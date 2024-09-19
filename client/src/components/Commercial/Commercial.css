@@ -166,3 +166,38 @@
 .property-card button:hover {
   background-color: #a0d040;
 }
+.filter-category {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.filter-category h4 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.filter-category .toggle-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.filter-category ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+.filter-category ul li {
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.filter-category ul li.active {
+  background-color: #e0f7fa; /* Active item background color */
+  }
+.filter-category ul li.inactive {
+  background-color: #ffffff; /* Inactive item background color */
+  }
+.filter-category ul li label {
+  margin-left: 0.5rem;
+}  
+
