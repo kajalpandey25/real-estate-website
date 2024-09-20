@@ -47,5 +47,4 @@ function App() {
     </UserDetailContext.Provider>
   );
 }
-
 export default App;
