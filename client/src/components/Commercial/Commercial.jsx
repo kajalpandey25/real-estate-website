@@ -159,9 +159,18 @@ const Commercial = () => {
     },
   ];
   const sellers = [
-    { name: 'Philip', status: 'Online', image: 'philip.jpg' },
-    { name: 'Lily', status: 'Offline', image: 'lily.jpg' },
-    // Add more sellers...
+    { name: 'Philip', status: 'Online', image:'philips.jpg'},
+    { name: 'Lily', status: 'Offline', image:'lily.jpg'},
+    { name: 'Philip', status: 'Online', image:'philips.jpg'},
+    { name: 'Lily', status: 'Offline', image:''},
+    { name: 'Philip', status: 'Online', image:'philips.jpg'},
+    { name: 'Lily', status: 'Offline', image:''},
+    { name: 'Philip', status: 'Online', image:'philips.jpg'},
+    { name: 'Lily', status: 'Offline', image:''},
+    { name: 'Philip', status: 'Online', image:'philips.jpg'},
+    { name: 'Lily', status: 'Offline', image:''},
+    { name: 'Philip', status: 'Online', image:'philips.jpg'},
+    { name: 'Lily', status: 'Offline', image:''},
   ];
 
   return (

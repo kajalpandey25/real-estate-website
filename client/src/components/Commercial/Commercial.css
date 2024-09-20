@@ -200,4 +200,32 @@
 .filter-category ul li label {
   margin-left: 0.5rem;
 }  
+.seller-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.seller-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.seller-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.seller-details p {
+  margin: 0;
+}
+
+.seller-details span {
+  font-size: 12px;
+  color: green;
+}
 
