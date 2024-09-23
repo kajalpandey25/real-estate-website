@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Commercial.css"; // Assuming external CSS
 
 const Commercial = () => {
+
   // Filter state management
   const [isActive, setIsActive] = useState(false);
   const [activeItems, setActiveItems] = useState({
@@ -14,7 +15,7 @@ const Commercial = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
-  const [price, setPrice] = useState(250000); // Initial price
+  const [price, setPrice] = useState(300000); // Initial price
 
   // Hardcoded data for states, cities, and local areas
   const stateCityAreaData = {
@@ -160,19 +161,22 @@ const Commercial = () => {
   ];
   const sellers = [
     { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Offline', image:'lily.jpg'},
-    { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Offline', image:''},
-    { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Offline', image:''},
-    { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Offline', image:''},
-    { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Offline', image:''},
-    { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Offline', image:''},
+    { name: 'Lily', status: 'Online', image:'lily.jpg'},
+    { name: 'Brandlie', status: 'Online', image:'1.jpg'},
+    { name: 'Darrell', status: 'Offline', image:'2.jpg'},
+    { name: 'Calvin', status: 'Online', image:'3.jpg'},
+    { name: 'Bassie', status: 'Offline', image:'4.jpg'},
+    { name: 'Tanya', status: 'Online', image:'5.jpg'},
+    { name: 'Guy', status: 'Offline', image:'1.jpg'},
   ];
 
+
+  // Handle Previous Page
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
   return (
     <div className="property-list-container">
       <div className="filters-container">
@@ -461,7 +465,7 @@ const Commercial = () => {
           </div>
         ))}
       </div>
-    </div>
+      </div>      
   );
 };
 

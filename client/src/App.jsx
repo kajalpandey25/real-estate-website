@@ -2,7 +2,7 @@ import { Suspense, useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Website from "./pages/Website";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Properties from "./pages/Properties/Properties";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
