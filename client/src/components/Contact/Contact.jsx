@@ -84,6 +84,57 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      {/* contact page 2 */}
+    <div className="contact-us-container">
+      <div className="contact-info">
+        <div className="contact-box">
+          <i className="fas fa-phone"></i>
+          <p>Phone number</p>
+          <span>0124 6650000</span>
+        </div>
+        <div className="contact-box">
+          <i className="fas fa-envelope"></i>
+          <p>Email ID</p>
+          <span>Life@oncoquest.net</span>
+        </div>
+        <div className="contact-box">
+          <i className="fab fa-whatsapp"></i>
+          <p>Whatsapp On:</p>
+          <span>7085350350</span>
+        </div>
+      </div>
+      
+      <div className="office-info">
+        <h3>Registered Office:</h3>
+        <p>
+          Meteryard Pvt Ltd<br />
+          B-21A, Africa Avenue Road, Opposite St. Thomas Church, Safdarjung Enclave New Delhi – 110029
+        </p>
+        <h3>National Reference Laboratory:</h3>
+        <p>
+          Meteryard Pvt Ltd<br />
+          A-17, Infocity, Sector-34 Gurgaon, Haryana – 122001
+        </p>
+        <p className="customer-care">Nationwide Customer Care: 0124 6650000</p>
+      </div>
+
+      <div className="map-container">
+        {/* Embed the map */}
+        <img src="https://maps.app.goo.gl/qfcM9hCpz3k3ANwN7" alt="Location Map" />
+      </div>
+
+      <div className="contact-form">
+        <h3>Contact Us</h3>
+        <form>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Enter Email ID" />
+          <input type="tel" placeholder="Enter Your Number" />
+          <input type="text" placeholder="Enter Your City" />
+          <textarea placeholder="Enter Your Message"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
     </div>
   );
 };

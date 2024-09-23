@@ -11,6 +11,7 @@ import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import AddPropertyModal from "../AddPropertyModal/AddPropertyModal";
 import useAuthCheck from "../../hooks/useAuthCheck.jsx";
 
+
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const headerColor = useHeaderColor();
@@ -76,7 +77,8 @@ const Header = () => {
               className="flexCenter h-menu"
               style={getMenuStyles(menuOpened)}
             >
-              <NavLink to="/cities">Cities</NavLink>
+              <NavLink to="/city">Cities</NavLink>
+        
               <NavLink to="/properties">Property Type</NavLink>
 
               <div onClick={handleAddPropertyClick}>Add Property</div>
