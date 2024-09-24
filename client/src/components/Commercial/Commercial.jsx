@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Commercial.css"; // Assuming external CSS
+import "./Commercial.css";
+import { FaPhone, FaComment } from "react-icons/fa";
 
 const Commercial = () => {
 
@@ -159,15 +160,30 @@ const Commercial = () => {
         "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVhbCUyMGVzdGF0ZSUyMHByb3Blcnl8ZW58MHx8MHx8fDA%3D", // Replace with actual image path
     },
   ];
+  // const sellers = [
+  //   { name: 'Philip', status: 'Online', image:'philips.jpg'},
+  //   { name: 'Lily', status: 'Online', image:'lily.jpg'},
+  //   { name: 'Brandlie', status: 'Online', image:'1.jpg'},
+  //   { name: 'Darrell', status: 'Offline', image:'2.jpg'},
+  //   { name: 'Calvin', status: 'Online', image:'3.jpg'},
+  //   { name: 'Bassie', status: 'Offline', image:'4.jpg'},
+  //   { name: 'Tanya', status: 'Online', image:'5.jpg'},
+  //   { name: 'Guy', status: 'Offline', image:'1.jpg'},
+  // ];
   const sellers = [
-    { name: 'Philip', status: 'Online', image:'philips.jpg'},
-    { name: 'Lily', status: 'Online', image:'lily.jpg'},
-    { name: 'Brandlie', status: 'Online', image:'1.jpg'},
-    { name: 'Darrell', status: 'Offline', image:'2.jpg'},
-    { name: 'Calvin', status: 'Online', image:'3.jpg'},
-    { name: 'Bassie', status: 'Offline', image:'4.jpg'},
-    { name: 'Tanya', status: 'Online', image:'5.jpg'},
-    { name: 'Guy', status: 'Offline', image:'1.jpg'},
+    { name: "Philip", status: "online", verified: true, img: "philips.jpg" },
+    { name: "Lily", status: "offline", verified: false, img: "lily.jpg" },
+    { name: "Brandie", status: "busy", verified: false, img: "1.jpg" },
+    { name: "Darrell", status: "online", verified: false, img: "2.jpg" },
+    { name: "Calvin", status: "busy", verified: false, img: "3.jpg" },
+    { name: "Bessie", status: "online", verified: true, img: "4.jpg" },
+    { name: "Tanya", status: "online", verified: false, img: "5.jpg" },
+    { name: "Gregory", status: "online", verified: false, img: "url_to_image" },
+    { name: "Randall", status: "offline", verified: true, img: "url_to_image" },
+    { name: "Kristin", status: "online", verified: false, img: "url_to_image" },
+    { name: "Guy", status: "online", verified: true, img: "url_to_image" },
+    { name: "Esther", status: "online", verified: false, img: "url_to_image" },
+    { name: "Audrey", status: "offline", verified: false, img: "" },
   ];
 
 
@@ -426,7 +442,6 @@ const Commercial = () => {
         )}
 
         {/* Local Area Filter */}
-        {/* Local Area Filter */}
         {selectedCity && (
           <div className="filter-section">
             <h3>📍Local Area</h3>
@@ -440,15 +455,54 @@ const Commercial = () => {
                 )
               )}
             </select>
-          </div>
-        )}
+            {/* Embed Google Map below the dropdown */}
+    {selectedArea && (
+      <div className="map-section">
+        <iframe
+          width="300"
+          height="250"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowHalfScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0142794556875!2d144.96305731550005!3d-37.81627937975125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne!5e0!3m2!1sen!2sau!4v1600264820144!5m2!1sen!2sau=${selectedArea},${selectedCity},${selectedState}`}
+        ></iframe>
+      </div>
+    )}
+  </div>
+)}
+
+
         {/* seller */}
-        <div className="seller-list">
+        {/* <div className="seller-list">
         <h3>Seller</h3>
         {sellers.map((seller, index) => (
           <SellerCard key={index} seller={seller} />
         ))}
-      </div>
+      </div> */}
+
+    {/* seller-2  */}
+    <div className="seller-list">
+      <h2>Suggested Seller</h2>
+      {sellers.map((seller, index) => (
+        <div key={index} className="seller">
+          <div className="seller-info">
+            <img src={seller.img} alt={seller.name} className="seller-img" />
+            <div className="seller-details">
+              <h3>
+                {seller.name}
+                {seller.verified && <span className="verified">✔️</span>}
+              </h3>
+              <p>Lorem Ipsum, LOREM</p>
+            </div>
+          </div>
+          <div className="seller-actions">
+            <FaComment className="action-icon" />
+            <FaPhone className="action-icon" />
+          </div>
+        </div>
+      ))}
+    </div>
       </div>
       {/* Property Listing */}
       <div className="property-list">

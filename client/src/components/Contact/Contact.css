@@ -100,7 +100,7 @@
 
 .contact-box i {
   font-size: 30px;
-  color: #5cb85c;
+  color: #a4d26f;
   margin-bottom: 10px;
 }
 
@@ -109,14 +109,16 @@
 }
 
 .office-info {
-  background: #e6f7e6;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  background:  #cbf49d;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 10px;
 }
 
 .map-container {
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .map-container img {
@@ -126,9 +128,11 @@
 }
 
 .contact-form {
-  padding: 20px;
+  padding: 30px;
   background: #f9f9f9;
   border-radius: 8px;
+  margin-left: 250px;
+  width: 50%;
 }
 
 .contact-form form {
@@ -145,22 +149,24 @@
 
 .contact-form button {
   padding: 10px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: #8fd63d;
+  color: black;
+  font-weight: bold;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  background-color: #4cae4c;
+  background-color: #86d42c;
+  font-weight: bold;
 }
 
 .customer-care {
   font-weight: bold;
-  background: #c2f0c2;
+  background: #8fd63d;
   padding: 10px;
   text-align: center;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 50px;
 }

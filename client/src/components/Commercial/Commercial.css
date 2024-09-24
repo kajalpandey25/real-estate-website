@@ -229,3 +229,80 @@
   color: green;
 }
 
+/* seller -2 */
+.seller-list {
+  width: 300px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.seller-list h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.seller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.seller-info {
+  display: flex;
+  align-items: center;
+}
+
+.seller-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid #e0e0e0; /* To show the status with a colored dot */
+}
+
+.seller-details h3 {
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.seller-details p {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.verified {
+  color: #4caf50; /* Green color for verified */
+  margin-left: 5px;
+}
+
+.seller-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-icon {
+  font-size: 20px;
+  color: #6ba843; /* Green color for icons */
+  cursor: pointer;
+}
+
+.seller-img.online {
+  border-color: #4caf50; /* Green border for online status */
+}
+
+.seller-img.offline {
+  border-color: #ccc; /* Grey border for offline */
+}
+
+.seller-img.busy {
+  border-color: #f44336; /* Red border for busy status */
+}
+
+

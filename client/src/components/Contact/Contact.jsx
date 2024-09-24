@@ -106,22 +106,35 @@ const Contact = () => {
       
       <div className="office-info">
         <h3>Registered Office:</h3>
-        <p>
+        <p style={{marginTop:"10px"}}>
           Meteryard Pvt Ltd<br />
           B-21A, Africa Avenue Road, Opposite St. Thomas Church, Safdarjung Enclave New Delhi – 110029
         </p>
-        <h3>National Reference Laboratory:</h3>
-        <p>
+        <h3 style={{marginTop:"10px"}}>National Reference Laboratory:</h3>
+        <p style={{marginTop:"10px"}}>
           Meteryard Pvt Ltd<br />
           A-17, Infocity, Sector-34 Gurgaon, Haryana – 122001
         </p>
-        <p className="customer-care">Nationwide Customer Care: 0124 6650000</p>
+        <p className="customer-care" style={{marginTop:"10px"}}>Nationwide Customer Care: 0124 6650000</p>
       </div>
 
-      <div className="map-container">
+       {/* <div className="map-container"> */}
         {/* Embed the map */}
-        <img src="https://maps.app.goo.gl/qfcM9hCpz3k3ANwN7" alt="Location Map" />
-      </div>
+        {/* <img src="https://maps.app.goo.gl/qfcM9hCpz3k3ANwN7" alt="Location Map" />
+      </div>  */}
+      <div className="map-container" style={{ height: '400px', width: '100%' }}>
+  <iframe
+    title="Location Map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0142794556875!2d144.96305731550005!3d-37.81627937975125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne!5e0!3m2!1sen!2sau!4v1600264820144!5m2!1sen!2sau"
+    width="100%"
+    height="100%"
+    frameBorder="0"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    aria-hidden="false"
+    tabIndex="0"
+  ></iframe>
+</div>
 
       <div className="contact-form">
         <h3>Contact Us</h3>
