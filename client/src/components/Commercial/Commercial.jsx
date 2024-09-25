@@ -3,7 +3,6 @@ import "./Commercial.css";
 import { FaPhone, FaComment } from "react-icons/fa";
 
 const Commercial = () => {
-
   // Filter state management
   const [isActive, setIsActive] = useState(false);
   const [activeItems, setActiveItems] = useState({
@@ -16,9 +15,23 @@ const Commercial = () => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
-  const [price, setPrice] = useState(300000); // Initial price
+  // const [price, setPrice] = useState(300000); 
+//price
+    const [minPrice, setMinPrice] = useState(0);
+    const [maxPrice, setMaxPrice] = useState(300000);
 
-  // Hardcoded data for states, cities, and local areas
+  
+    const handleMinChange = (e) => {
+      const value = Math.min(e.target.value, maxPrice - 1);
+      setMinPrice(value);
+    };
+  
+    const handleMaxChange = (e) => {
+      const value = Math.max(e.target.value, minPrice + 1);
+      setMaxPrice(value);
+    }
+  
+  // data for states, cities, and local areas
   const stateCityAreaData = {
     Maharashtra: {
       Mumbai: {
@@ -30,6 +43,10 @@ const Commercial = () => {
         "Shivaji Nagar": { lat: 18.5308, lng: 73.8478 },
         Kothrud: { lat: 18.5074, lng: 73.8077 },
         Hinjewadi: { lat: 18.5957, lng: 73.7187 },
+      },
+      Nashik: {
+        "College Road": { lat: 20.0057, lng: 73.7931 },
+        "Gangapur Road": { lat: 20.0098, lng: 73.7572 },
       },
     },
     Karnataka: {
@@ -43,6 +60,20 @@ const Commercial = () => {
         Hebbal: { lat: 12.3489, lng: 76.6331 },
         Saraswathipuram: { lat: 12.3027, lng: 76.6394 },
       },
+      Hubli: {
+        "Gokul Road": { lat: 15.3647, lng: 75.1240 },
+        "Vidya Nagar": { lat: 15.3507, lng: 75.1380 },
+      },
+    },
+    TamilNadu: {
+      Chennai: {
+        Mylapore: { lat: 13.0339, lng: 80.2619 },
+        "Anna Nagar": { lat: 13.0892, lng: 80.2095 },
+      },
+      Coimbatore: {
+        "RS Puram": { lat: 11.0070, lng: 76.9469 },
+        Gandhipuram: { lat: 11.0168, lng: 76.9558 },
+      },
     },
     Delhi: {
       "New Delhi": {
@@ -50,8 +81,23 @@ const Commercial = () => {
         "Hauz Khas": { lat: 28.5494, lng: 77.2001 },
         Dwarka: { lat: 28.5916, lng: 77.0423 },
       },
+      Rohini: {
+        Sector5: { lat: 28.7159, lng: 77.1130 },
+        Sector13: { lat: 28.7141, lng: 77.1308 },
+      },
+    },
+    UttarPradesh: {
+      Lucknow: {
+        "Hazratganj": { lat: 26.8467, lng: 80.9462 },
+        "Gomti Nagar": { lat: 26.8500, lng: 81.0200 },
+      },
+      Agra: {
+        Tajganj: { lat: 27.1604, lng: 78.0399 },
+        "Dayal Bagh": { lat: 27.2187, lng: 78.0216 },
+      },
     },
   };
+  
 
   // Handle category toggle
   const toggleFilter = () => {
@@ -107,7 +153,7 @@ const Commercial = () => {
       propertySize: "900 Sq. Ft.",
       price: "2,75,000/-",
       imageUrl:
-        "https://media.istockphoto.com/id/1138504603/photo/high-rise-buildings-in-gurgaon-delhi-ncr-shot-at-dusk.webp?a=1&b=1&s=612x612&w=0&k=20&c=pBXO7HXnbaP3tICGEMWlffHy3lLtLJQkVOf04oUzvPA=", // Replace with actual image path
+        "https://media.istockphoto.com/id/1138504603/photo/high-rise-buildings-in-gurgaon-delhi-ncr-shot-at-dusk.webp?a=1&b=1&s=612x612&w=0&k=20&c=pBXO7HXnbaP3tICGEMWlffHy3lLtLJQkVOf04oUzvPA=", 
     },
     {
       id: 2,
@@ -117,7 +163,7 @@ const Commercial = () => {
       propertySize: "900 Sq. Ft.",
       price: "2,75,000/-",
       imageUrl:
-        "https://media.istockphoto.com/id/946740780/photo/city-cityscape-street-apartment-city-street.jpg?s=612x612&w=0&k=20&c=BTZfSyWgDzTMNcKBkQq6wTDY9L9XASd8gpwl_JzrAKM=", // Replace with actual image path
+        "https://media.istockphoto.com/id/946740780/photo/city-cityscape-street-apartment-city-street.jpg?s=612x612&w=0&k=20&c=BTZfSyWgDzTMNcKBkQq6wTDY9L9XASd8gpwl_JzrAKM=", 
     },
     {
       id: 3,
@@ -127,7 +173,7 @@ const Commercial = () => {
       propertySize: "900 Sq. Ft.",
       price: "2,75,000/-",
       imageUrl:
-        "https://media.istockphoto.com/id/1429383056/photo/evening-time-phrom-phong-district-cityscape-at-bangkok-pedestrian-crowd-crossing-and-traffic.jpg?s=612x612&w=0&k=20&c=LRoWV5aDZkPU5XlDzDxTjZq3zxcst2bIXOlS3Ekj-4w=", // Replace with actual image path
+        "https://media.istockphoto.com/id/1429383056/photo/evening-time-phrom-phong-district-cityscape-at-bangkok-pedestrian-crowd-crossing-and-traffic.jpg?s=612x612&w=0&k=20&c=LRoWV5aDZkPU5XlDzDxTjZq3zxcst2bIXOlS3Ekj-4w=", 
     },
     {
       id: 4,
@@ -137,7 +183,7 @@ const Commercial = () => {
       propertySize: "900 Sq. Ft.",
       price: "2,75,000/-",
       imageUrl:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlYWwlMjBlc3RhdGUlMjAlMjBwcm9wZXJ0eSUyMGltYWdlfGVufDB8fDB8fHww", // Replace with actual image path
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlYWwlMjBlc3RhdGUlMjAlMjBwcm9wZXJ0eSUyMGltYWdlfGVufDB8fDB8fHww", 
     },
     {
       id: 5,
@@ -147,7 +193,7 @@ const Commercial = () => {
       propertySize: "900 Sq. Ft.",
       price: "2,75,000/-",
       imageUrl:
-        "https://plus.unsplash.com/premium_photo-1684338795288-097525d127f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D", // Replace with actual image path
+        "https://plus.unsplash.com/premium_photo-1684338795288-097525d127f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D", 
     },
     {
       id: 6,
@@ -157,35 +203,55 @@ const Commercial = () => {
       propertySize: "900 Sq. Ft.",
       price: "2,75,000/-",
       imageUrl:
-        "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVhbCUyMGVzdGF0ZSUyMHByb3Blcnl8ZW58MHx8MHx8fDA%3D", // Replace with actual image path
+        "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVhbCUyMGVzdGF0ZSUyMHByb3Blcnl8ZW58MHx8MHx8fDA%3D", 
+    },
+    {
+      id: 7,
+      title: "BLK 7-1005, Vascon Tulips Gold",
+      description:
+        "It Is A Piece Of Really Soft Tissue That Appears As A Thin Line Between The Gums And Lips. You Can Find It On The Top And The Bottom Of Your Oral Cavity.",
+      propertySize: "900 Sq. Ft.",
+      price: "2,75,000/-",
+      imageUrl:
+        "https://plus.unsplash.com/premium_photo-1674035036687-616ef2d0a7cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZSUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww", 
+    },
+    {
+      id: 8,
+      title: "BLK 7-1005, Vascon Tulips Gold",
+      description:
+        "It Is A Piece Of Really Soft Tissue That Appears As A Thin Line Between The Gums And Lips. You Can Find It On The Top And The Bottom Of Your Oral Cavity.",
+      propertySize: "900 Sq. Ft.",
+      price: "2,75,000/-",
+      imageUrl:
+        "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhbCUyMGVzdGF0ZSUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww", 
+    },
+    {
+      id: 9,
+      title: "BLK 7-1005, Vascon Tulips Gold",
+      description:
+        "It Is A Piece Of Really Soft Tissue That Appears As A Thin Line Between The Gums And Lips. You Can Find It On The Top And The Bottom Of Your Oral Cavity.",
+      propertySize: "900 Sq. Ft.",
+      price: "2,75,000/-",
+      imageUrl:
+        "https://images.unsplash.com/photo-1560184897-ae75f418493e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
     },
   ];
-  // const sellers = [
-  //   { name: 'Philip', status: 'Online', image:'philips.jpg'},
-  //   { name: 'Lily', status: 'Online', image:'lily.jpg'},
-  //   { name: 'Brandlie', status: 'Online', image:'1.jpg'},
-  //   { name: 'Darrell', status: 'Offline', image:'2.jpg'},
-  //   { name: 'Calvin', status: 'Online', image:'3.jpg'},
-  //   { name: 'Bassie', status: 'Offline', image:'4.jpg'},
-  //   { name: 'Tanya', status: 'Online', image:'5.jpg'},
-  //   { name: 'Guy', status: 'Offline', image:'1.jpg'},
-  // ];
+  // sellers
   const sellers = [
     { name: "Philip", status: "online", verified: true, img: "philips.jpg" },
     { name: "Lily", status: "offline", verified: false, img: "lily.jpg" },
     { name: "Brandie", status: "busy", verified: false, img: "1.jpg" },
     { name: "Darrell", status: "online", verified: false, img: "2.jpg" },
     { name: "Calvin", status: "busy", verified: false, img: "3.jpg" },
-    { name: "Bessie", status: "online", verified: true, img: "4.jpg" },
-    { name: "Tanya", status: "online", verified: false, img: "5.jpg" },
-    { name: "Gregory", status: "online", verified: false, img: "url_to_image" },
-    { name: "Randall", status: "offline", verified: true, img: "url_to_image" },
-    { name: "Kristin", status: "online", verified: false, img: "url_to_image" },
-    { name: "Guy", status: "online", verified: true, img: "url_to_image" },
-    { name: "Esther", status: "online", verified: false, img: "url_to_image" },
-    { name: "Audrey", status: "offline", verified: false, img: "" },
+    { name: "Bessie", status: "online", verified: true, img: "5.jpg" },
+    { name: "Tanya", status: "online", verified: false, img: "4.jpg" },
+    { name: "Gregory", status: "online", verified: false, img: "9.jpg" },
+    { name: "Randall", status: "offline", verified: true, img: "6.jpg" },
+    { name: "Kristin", status: "online", verified: false, img: "10.jpg" },
+    { name: "Guy", status: "online", verified: true, img: "7.jpg" },
+    { name: "Esther", status: "online", verified: false, img: "8.jpg" },
+    { name: "Audrey", status: "offline", verified: false, img: "11.jpg" },
   ];
-
 
   // Handle Previous Page
   const prevPage = () => {
@@ -194,11 +260,17 @@ const Commercial = () => {
     }
   };
   return (
+    <div className="residential-container">
+    <div className="property-header">
+      <h2 style={{marginLeft:"400px", marginBottom:"10px", marginTop:"10px", fontSize:"20px"}}>Residential</h2>
+      <p style={{marginLeft:"400px", fontSize:"15px", color:"gray"}}>Residential Projects Across India <span style={{marginLeft:"300px", fontSize:"15px", color:"gray"}}>111,117 Ads in<span style={{color:"black",fontSize:"15px", fontWeight:"bold"}}>India</span></span></p>
+    </div>
+
     <div className="property-list-container">
       <div className="filters-container">
         {/* Property Category */}
         <div className="filter-section">
-          <h3>🏠Property Category</h3>
+          <h3 style={{marginBottom:"30px"}}>🏠Property Category</h3>
           <div className="filter-category">
             <h4 onClick={toggleFilter}>
               <span className="toggle-icon">{isActive ? "▲" : "▼"}</span>
@@ -400,18 +472,59 @@ const Commercial = () => {
           </div>
         </div>
         {/* Price Range */}
-        <div className="filter-section">
+        {/* <div className="filter-section">
           <h3>💵Price Range</h3>
           <input
             type="range"
             min="0"
-            max="50000"
+            max="300000"
             step="1000"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
-          <label htmlFor="price-range">Price up to ₹{price}</label>
-        </div>
+          <label htmlFor="price-range"> Price up to ₹{price}</label>
+        </div> */}
+        <div className="price-range">
+      <div className="filter-header">
+        <h3>💰 Price Range</h3>
+        <button>▼</button>
+      </div>
+      
+      <div className="range-container">
+        <input
+          type="range"
+          min="0"
+          max="100000"
+          value={minPrice}
+          onChange={handleMinChange}
+          className="range-min"
+        />
+        <input
+          type="range"
+          min="0"
+          max="100000"
+          value={maxPrice}
+          onChange={handleMaxChange}
+          className="range-max"
+        />
+      </div>
+      
+      <div className="price-inputs">
+        <input
+          type="text"
+          value={`Rs${minPrice}`}
+          readOnly
+          className="price-box"
+        />
+        <span>-</span>
+        <input
+          type="text"
+          value={`Rs${maxPrice}`}
+          readOnly
+          className="price-box"
+        />
+      </div>
+      </div>
 
         {/* State Filter */}
         <div className="filter-section">
@@ -456,53 +569,48 @@ const Commercial = () => {
               )}
             </select>
             {/* Embed Google Map below the dropdown */}
-    {selectedArea && (
-      <div className="map-section">
-        <iframe
-          width="300"
-          height="250"
-          style={{ border: 0 }}
-          loading="lazy"
-          allowHalfScreen
-          referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0142794556875!2d144.96305731550005!3d-37.81627937975125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne!5e0!3m2!1sen!2sau!4v1600264820144!5m2!1sen!2sau=${selectedArea},${selectedCity},${selectedState}`}
-        ></iframe>
-      </div>
-    )}
-  </div>
-)}
+            {selectedArea && (
+              <div className="map-section">
+                <iframe
+                  width="300"
+                  height="250"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowHalfScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0142794556875!2d144.96305731550005!3d-37.81627937975125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne!5e0!3m2!1sen!2sau!4v1600264820144!5m2!1sen!2sau=${selectedArea},${selectedCity},${selectedState}`}
+                ></iframe>
+              </div>
+            )}
+          </div>
+        )}
 
-
-        {/* seller */}
-        {/* <div className="seller-list">
-        <h3>Seller</h3>
-        {sellers.map((seller, index) => (
-          <SellerCard key={index} seller={seller} />
-        ))}
-      </div> */}
-
-    {/* seller-2  */}
-    <div className="seller-list">
-      <h2>Suggested Seller</h2>
-      {sellers.map((seller, index) => (
-        <div key={index} className="seller">
-          <div className="seller-info">
-            <img src={seller.img} alt={seller.name} className="seller-img" />
-            <div className="seller-details">
-              <h3>
-                {seller.name}
-                {seller.verified && <span className="verified">✔️</span>}
-              </h3>
-              <p>Lorem Ipsum, LOREM</p>
+        {/* seller-2  */}
+        <div className="seller-list">
+          <h2>Suggested Seller</h2>
+          {sellers.map((seller, index) => (
+            <div key={index} className="seller">
+              <div className="seller-info">
+                <img
+                  src={seller.img}
+                  alt={seller.name}
+                  className="seller-img"
+                />
+                <div className="seller-details">
+                  <h3>
+                    {seller.name}
+                    {seller.verified && <span className="verified">✔️</span>}
+                  </h3>
+                  <p>Lorem Ipsum, LOREM</p>
+                </div>
+              </div>
+              <div className="seller-actions">
+                <FaComment className="action-icon" />
+                <FaPhone className="action-icon" />
+              </div>
             </div>
-          </div>
-          <div className="seller-actions">
-            <FaComment className="action-icon" />
-            <FaPhone className="action-icon" />
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
       </div>
       {/* Property Listing */}
       <div className="property-list">
@@ -519,8 +627,8 @@ const Commercial = () => {
           </div>
         ))}
       </div>
-      </div>      
+    </div>
+    </div>
   );
 };
-
 export default Commercial;
