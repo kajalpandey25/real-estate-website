@@ -259,6 +259,7 @@ const Commercial = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
   return (
     <div className="residential-container">
     <div className="property-header">
@@ -472,18 +473,6 @@ const Commercial = () => {
           </div>
         </div>
         {/* Price Range */}
-        {/* <div className="filter-section">
-          <h3>💵Price Range</h3>
-          <input
-            type="range"
-            min="0"
-            max="300000"
-            step="1000"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-          <label htmlFor="price-range"> Price up to ₹{price}</label>
-        </div> */}
         <div className="price-range">
       <div className="filter-header">
         <h3>💰 Price Range</h3>
