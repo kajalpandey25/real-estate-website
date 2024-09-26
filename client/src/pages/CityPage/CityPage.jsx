@@ -1,26 +1,14 @@
-// import React from 'react';
-// import './CityPage.css'; // Import the CSS file for this component
-
-// const CityPage = () => {
-//   return (
-//     <div className="city-page">
-//       <h1>Cities</h1>
-//       <ul className="city-list">
-//         <li className="city-item">New York</li>
-//         <li className="city-item">Los Angeles</li>
-//         <li className="city-item">Chicago</li>
-//         {/* Add more cities as needed */}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default CityPage;
-
-import React from "react";
+import React, { useState } from "react";
 import "./CityPage.css";
 
 const CityPage = () => {
+  // State to track which FAQ item is expanded
+  const [activeFAQ, setActiveFAQ] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setActiveFAQ(index === activeFAQ ? null : index);
+  };
+
   return (
     <div className="property-page">
       {/* Header Section */}
@@ -76,50 +64,153 @@ const CityPage = () => {
           <div>Furnishing: <span style={{ color: "gray", fontSize: "16px" }}>BLK 7-1005, Vascon Tulips Gold</span></div>
           <div>Type of Ownership: <span style={{ color: "gray", fontSize: "16px" }}>Owner</span></div>
         </div>
+        <div style={{marginTop:"10px"}}>See More.....</div>
       </section>
 
       {/* Suggested Properties Section */}
       <section className="suggested-properties">
         <h2>Suggested Properties in This Project and Nearby</h2>
-        <p></p>
+        <p style={{color:"gray", marginBottom:"20px"}}>Featured Residential Projects Across India</p>
         <div className="property-cards">
           <div className="property-card">
-            <img src="property1.jpg" alt="Property 1" />
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbHxlbnwwfHwwfHx8MA%3D%3D" alt="Property 1" />
             <div className="property-info">
               <p>3 BHK, Noida</p>
-              <p>Price: ₹90 L</p>
+              <p>Price: 2 Cr</p>
             </div>
           </div>
           <div className="property-card">
-            <img src="property2.jpg" alt="Property 2" />
+            <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D" alt="Property 2" />
             <div className="property-info">
               <p>2 BHK, Mumbai</p>
-              <p>Price: ₹1 Cr</p>
+              <p>Price: 1 Cr</p>
             </div>
           </div>
           {/* Repeat for other property cards */}
+          <div className="property-card">
+            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="Property 3" />
+            <div className="property-info">
+              <p>4 BHK, Delhi</p>
+              <p>Price: 5 Cr</p>
+            </div>
+          </div>
+          <div className="property-card">
+            <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHJlYWx8ZW58MHx8MHx8fDA%3D" alt="Property 4" />
+            <div className="property-info">
+              <p>4 BHK, Delhi</p>
+              <p>Price: 5 Cr</p>
+            </div>
+          </div>
+          <div className="property-card">
+            <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHJlYWx8ZW58MHx8MHx8fDA%3D" alt="Property 5" />
+            <div className="property-info">
+              <p>4 BHK, Delhi</p>
+              <p>Price: 5 Cr</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Commercial Projects Section */}
       <section className="commercial-projects">
         <h2>Commercial Projects</h2>
+        <p style={{color:"gray", marginBottom:"20px"}}>Featured Residential Projects Across India</p>
         <div className="property-cards">
           <div className="property-card">
-            <img src="commercial1.jpg" alt="Commercial 1" />
+            <img src="https://images.unsplash.com/photo-1636739067155-643a5c678831?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbW1lcmNpYWwlMjByZWFsJTIwZXN0YXRlfGVufDB8fDB8fHww" alt="Commercial 1" />
             <div className="property-info">
               <p>Office Space, Mumbai</p>
               <p>Price: ₹5 Cr</p>
             </div>
           </div>
           <div className="property-card">
-            <img src="commercial2.jpg" alt="Commercial 2" />
+            <img src="https://images.unsplash.com/photo-1656646424687-b303e1758b36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvbW1lcmNpYWwlMjByZWFsJTIwZXN0YXRlfGVufDB8fDB8fHww" alt="Commercial 2" />
             <div className="property-info">
               <p>Retail Space, Pune</p>
-              <p>Price: ₹3 Cr</p>
+              <p>Price: 3 Cr</p>
             </div>
           </div>
           {/* Repeat for other commercial property cards */}
+          <div className="property-card">
+            <img src="https://images.unsplash.com/photo-1656646424976-845444fff394?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbW1lcmNpYWwlMjByZWFsJTIwZXN0YXRlfGVufDB8fDB8fHww" alt="Commercial 3" />
+            <div className="property-info">
+              <p>Office Space, Bihar</p>
+              <p>Price: 1 Cr</p>
+            </div>
+          </div>
+          <div className="property-card">
+            <img src="https://plus.unsplash.com/premium_photo-1672423154405-5fd922c11af2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D" alt="Commercial 4" />
+            <div className="property-info">
+              <p>Retail Space, Gurugram</p>
+              <p>Price: 3 Cr</p>
+            </div>
+          </div>
+          <div className="property-card">
+            <img src="https://plus.unsplash.com/premium_photo-1661340695541-ee1ca7efedd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJ1aWxkaW5nfGVufDB8fDB8fHww" alt="Commercial 5" />
+            <div className="property-info">
+              <p>Office Space, Gujrat</p>
+              <p>Price: 2 Cr</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* FAQ Section */}
+      <section className="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-item">
+          <div className="faq-question" onClick={() => toggleFAQ(1)}>
+            What is the process for buying a property?
+            <span>{activeFAQ === 1 ? "-" : "+"}</span>
+          </div>
+          {activeFAQ === 1 && (
+            <div className="faq-answer">
+              <p>
+                The process involves selecting a property, checking legal documents, making an offer, and completing paperwork through a legal process. After paying the booking amount and signing the agreement, the rest of the payment is made to finalize the deal.
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="faq-item">
+          <div className="faq-question" onClick={() => toggleFAQ(2)}>
+            How can I schedule a property visit?
+            <span>{activeFAQ === 2 ? "-" : "+"}</span>
+          </div>
+          {activeFAQ === 2 && (
+            <div className="faq-answer">
+              <p>
+                You can schedule a visit by contacting the property agent through the "Enquire Now" button or reaching out to the provided contact details on the property listing.
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="faq-item">
+          <div className="faq-question" onClick={() => toggleFAQ(3)}>
+            What are the available payment methods?
+            <span>{activeFAQ === 3 ? "-" : "+"}</span>
+          </div>
+          {activeFAQ === 3 && (
+            <div className="faq-answer">
+              <p>
+                Payment can be made via bank transfer, home loans, or credit cards depending on the terms of the agreement. Full details are provided during the finalization of the property.
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="faq-item">
+          <div className="faq-question" onClick={() => toggleFAQ(4)}>
+            Are there any additional charges besides the property price?
+            <span>{activeFAQ === 4 ? "-" : "+"}</span>
+          </div>
+          {activeFAQ === 4 && (
+            <div className="faq-answer">
+              <p>
+                Yes, additional charges may include registration fees, taxes, maintenance charges, and furnishing costs, depending on the property. Make sure to ask the seller or agent about these costs.
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>
