@@ -1,29 +1,140 @@
-.city-page {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .city-page h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .city-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .city-item {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .city-item:hover {
-    background-color: #e0e0e0;
-  }
-  
+/* PropertyPage.css */
+.property-page {
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.property-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.property-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.property-header span {
+  color: #7bd645; /* Green color */
+}
+
+.property-header p {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* Gallery Section */
+.property-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.gallery-images {
+  display: flex;
+  position: relative;
+  flex: 2;
+}
+
+.gallery-images img {
+  width: 250px;
+  margin-right: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.image-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+}
+
+/* Filter Section */
+.filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.filter-buttons button {
+  padding: 10px 15px;
+  background-color: #7bd645;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filter-buttons .enquire-now {
+  background-color: #5ca045;
+}
+
+/* Property Details Section */
+.property-details {
+  margin-bottom: 30px;
+}
+
+.property-details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  font-size: 1rem;
+  color: #555;
+font-weight: bold;
+}
+
+/* Suggested Properties and Commercial Projects Section */
+.suggested-properties, .commercial-projects {
+  margin-bottom: 30px;
+}
+
+.property-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+}
+
+.property-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.property-info {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.property-info p {
+  margin: 5px 0;
+}

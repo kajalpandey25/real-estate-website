@@ -90,17 +90,17 @@ const Contact = () => {
         <div className="contact-box">
           <i className="fas fa-phone"></i>
           <p>Phone number</p>
-          <span>0124 6650000</span>
+          <span style={{fontSize:"20px"}}>0124 6650000</span>
         </div>
         <div className="contact-box">
           <i className="fas fa-envelope"></i>
           <p>Email ID</p>
-          <span>Life@oncoquest.net</span>
+          <span style={{fontSize:"20px"}}>Life@oncoquest.net</span>
         </div>
         <div className="contact-box">
           <i className="fab fa-whatsapp"></i>
           <p>Whatsapp On:</p>
-          <span>7085350350</span>
+          <span style={{fontSize:"20px"}}>7085350350</span>
         </div>
       </div>
       
