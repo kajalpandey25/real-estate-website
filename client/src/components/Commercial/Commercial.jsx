@@ -263,8 +263,8 @@ const Commercial = () => {
   return (
     <div className="residential-container">
     <div className="property-header">
-      <h2 style={{marginLeft:"400px", marginBottom:"10px", marginTop:"10px", fontSize:"20px"}}>Residential</h2>
-      <p style={{marginLeft:"400px", fontSize:"15px", color:"gray"}}>Residential Projects Across India <span style={{marginLeft:"300px", fontSize:"15px", color:"gray"}}>111,117 Ads in<span style={{color:"black",fontSize:"15px", fontWeight:"bold"}}>India</span></span></p>
+      <h2 style={{marginRight:"600px", marginBottom:"5px", marginTop:"5px", fontSize:"20px"}}>Residential</h2>
+      <p style={{marginRight:"50px", fontSize:"15px", color:"gray"}}>Residential Projects Across India <span style={{marginLeft:"300px", fontSize:"15px", color:"gray"}}>111,117 Ads in<span style={{color:"black",fontSize:"15px", fontWeight:"bold"}}>India</span></span></p>
     </div>
 
     <div className="property-list-container">
