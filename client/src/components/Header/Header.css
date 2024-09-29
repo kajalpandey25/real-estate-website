@@ -4,51 +4,27 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  background-color: #fff;
   border-bottom: 1px solid #ddd;
-  background-color: white
 }
 
-.left-section .logo {
+.logo {
   height: 30px;
 }
 
-.middle-section {
-  display: flex;
-  align-items: center;
-  color: #555;
-  font-size: 14px;
-}
-
+.middle-section,
 .right-section {
   display: flex;
   align-items: center;
   color: #555;
   font-size: 14px;
+  gap: 10px;
 }
 
-.icon {
-  margin: 0 5px;
-  font-size: 16px;
-  color: #555;
-}
-
-.icon {
-  margin-right: 8px; /* Space between icon and text */
-  font-size: 20px; /* Adjust the size of the icon */
-  color: #000; /* Icon color */
-}
-
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f8f8f8;
-}
-
-.left-section, .middle-section, .right-section {
-  display: flex;
-  align-items: center;
+.middle-section .icon,
+.right-section .icon {
+  font-size: 20px;
+  color: #000;
 }
 
 .middle-section {
@@ -99,32 +75,108 @@
 
 .menu-icon {
   display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
+/* Responsive Styles for Tablets */
+@media (max-width: 1024px) {
+  .h-menu {
+    gap: 15px;
+    font-size: 14px;
+  }
 
-/* Responsive Styles */
+  .top-header {
+    padding: 10px 15px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .h-wrapper {
+    margin-left: auto;
+  }
+}
+
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
 
   .h-menu {
-    display: none; /* Default hidden on small screens */
+    display: none;
     position: absolute;
     top: 50px;
     right: 20px;
     background-color: #333;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .h-menu.open {
-    display: block; /* Show when open */
+    display: flex;
   }
 
   .h-menu a {
     display: block;
     margin: 5px 0;
   }
+
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .middle-section,
+  .right-section {
+    margin: 10px 0;
+    font-size: 12px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
 }
 
+/* Extra Responsive Styling for Small Screens */
+@media (max-width: 576px) {
+  .top-header {
+    padding: 10px 10px;
+  }
+
+  .logo {
+    height: 25px;
+  }
+
+  .middle-section,
+  .right-section {
+    font-size: 11px;
+    margin: 5px 0;
+  }
+
+  .h-menu {
+    top: 40px;
+    padding: 10px;
+  }
+
+  .button {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+}
