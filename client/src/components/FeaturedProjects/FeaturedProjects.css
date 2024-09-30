@@ -5,16 +5,14 @@
 }
 
 .featured-projects h2 {
-    font-size: 2em; 
-    margin-bottom: 10px;
-    margin-right: 700px;
-    margin-top:1px;
+    font-size: 1.9em; 
+    margin-bottom: 5px;
 }
 
 .featured-projects p {
     font-size: 1em;
     color: gray;
-    margin-top:0px;
+    margin-bottom: 15px;
 }
 
 /* Projects Container */
