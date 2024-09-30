@@ -39,8 +39,8 @@ const projects = [
 const FeaturedProjects = () => {
     return (
         <div className="featured-projects">
-            <h2 style={{marginRight: "700px", marginTop:"1px"}}>FEATURED PROJECTS</h2>
-            <p style={{marginRight: "700px", marginTop:"0px"}}>Featured Residential Projects Across India</p>
+            <h2>FEATURED PROJECTS</h2>
+            <p>Featured Residential Projects Across India</p>
             <div className="projects-container">
                 {projects.map(project => (
                     <div key={project.id} className="project-card">

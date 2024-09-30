@@ -1,18 +1,23 @@
+/* Featured Projects Section */
 .featured-projects {
     text-align: center;
     padding: 20px;
 }
 
 .featured-projects h2 {
-    font-size: 2em;
-    margin-bottom: 2px;
+    font-size: 2em; 
+    margin-bottom: 10px;
+    margin-right: 700px;
+    margin-top:1px;
 }
 
 .featured-projects p {
     font-size: 1em;
     color: gray;
+    margin-top:0px;
 }
 
+/* Projects Container */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -20,11 +25,12 @@
     gap: 30px;
 }
 
+/* Project Card */
 .project-card {
     background-color: white;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
-    width: 250px;
+    width: 280px;
     padding: 15px;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,7 +48,7 @@
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -52,13 +58,13 @@
 }
 
 .project-card h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1em;
+    margin-bottom: 8px;
 }
 
 .project-description {
-    font-size: 0.9em;
-    color:black;
+    font-size: 0.85em;
+    color: black;
     margin-bottom: 10px;
 }
 
@@ -66,8 +72,8 @@
     background-color: #89d433;
     color: black;
     border: none;
-    padding: 8px;
-    border-radius: 25px;
+    padding: 6px 12px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
@@ -93,4 +99,48 @@
 
 .project-card:hover::before {
     opacity: 1;
+}
+
+/* Responsive Styling for Tablets (768px and below) */
+@media (max-width: 768px) {
+    .projects-container {
+        gap: 20px; /* Adjust gap on tablets */
+    }
+    
+    .project-card {
+        width: 45%; /* Make cards fit better on tablet screens */
+    }
+    
+    .featured-projects h2 {
+        font-size: 1.8em; /* Slightly reduced title size */
+        
+    }
+
+    .featured-projects p, .project-description {
+        font-size: 0.9em; /* Adjust font size */
+    }
+}
+
+/* Responsive Styling for Mobile (480px and below) */
+@media (max-width: 480px) {
+    .projects-container {
+        flex-direction: column; /* Stack cards vertically on mobile */
+        gap: 15px;
+    }
+    
+    .project-card {
+        width: 100%; /* Full width on mobile */
+    }
+    
+    .featured-projects h2 {
+        font-size: 1.5em; /* Reduced title size for mobile */
+    }
+
+    .featured-projects p, .project-description {
+        font-size: 0.8em; /* Smaller font size for mobile */
+    }
+    
+    .view-more-btn {
+        padding: 5px 10px; /* Smaller button size for mobile */
+    }
 }
