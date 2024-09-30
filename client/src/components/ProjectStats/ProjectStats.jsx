@@ -11,8 +11,8 @@ const ProjectStats = () => {
 
   return (
     <div className="project-stats-container">
-      <h2 style={{marginRight: "900px"}}>PROJECTS</h2>
-      <p style={{marginRight:"700px"}}>Featured Residential Projects Across India</p>
+      <h2>PROJECTS</h2>
+      <p>Featured Residential Projects Across India</p>
       <div className="stats-grid">
         {stats.map((stat, index) => (
           <div key={index} className="stat-card">

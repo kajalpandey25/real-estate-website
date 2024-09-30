@@ -1,92 +1,198 @@
+/* Base Styles */
 .youtube-videos-container {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .video-slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 20px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.video-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden; /* Hide overflow for smooth sliding */
+  flex-wrap: nowrap; /* Prevent wrapping in the slider */
+}
+
+.video-card {
+  position: relative;
+  width: 300px;
+  margin: 0 10px;
+  border: 2px solid #d3d3d3;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.video-card:hover {
+  transform: scale(1.05); /* Hover effect for zooming */
+}
+
+.video-thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-title, .video-description {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.video-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.video-description {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+/* Slider Arrows */
+.slider-arrow {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.left-arrow {
+  margin-right: 10px;
+}
+
+.right-arrow {
+  margin-left: 10px;
+}
+
+/* Slider Dots */
+.slider-dots {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #6c757d;
+}
+
+/* Responsive Styles */
+
+/* Large Screens (Desktops > 1200px) */
+@media (min-width: 1200px) {
   .video-card {
-    position: relative;
-    width: 300px;
-    margin: 0 10px;
-    border: 2px solid #d3d3d3;
-    border-radius: 10px;
-    overflow: hidden;
+      width: 350px;
   }
-  
-  .video-thumbnail {
-    width: 100%;
-    display: block;
-  }
-  
-  .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .video-title, .video-description {
-    padding: 10px;
-    font-size: 14px;
-  }
-  
   .video-title {
-    font-weight: bold;
-    margin-top: 10px;
+      font-size: 16px;
   }
-  
   .video-description {
-    color: #6c757d;
-    font-size: 12px;
+      font-size: 14px;
   }
-  
+}
+
+/* Tablets (768px - 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+  .video-slider {
+      justify-content: space-around;
+  }
+
+  .video-card {
+      width: 260px;
+      margin: 0 15px;
+  }
+
+  .video-title {
+      font-size: 14px;
+  }
+  .video-description {
+      font-size: 12px;
+  }
+
   .slider-arrow {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+      font-size: 20px;
   }
-  
-  .left-arrow {
-    margin-right: 10px;
+}
+
+/* Mobile Devices (less than 768px) */
+@media (max-width: 768px) {
+  .video-slider {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
   }
-  
-  .right-arrow {
-    margin-left: 10px;
+
+  .video-card {
+      width: 100%;
+      max-width: 320px;
+      margin: 20px 0;
   }
-  
-  .slider-dots {
-    margin-top: 20px;
+
+  .play-button {
+      font-size: 30px;
+      width: 40px;
+      height: 40px;
   }
-  
+
+  .video-title {
+      font-size: 12px;
+  }
+
+  .video-description {
+      font-size: 10px;
+  }
+
+  .slider-arrow {
+      display: none; /* Hide arrows on small screens */
+  }
+
   .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #d3d3d3;
-    border-radius: 50%;
-    display: inline-block;
+      height: 8px;
+      width: 8px;
   }
-  
-  .dot.active {
-    background-color: #6c757d;
+}
+
+/* Extra Small Screens (less than 480px) */
+@media (max-width: 480px) {
+  .video-card {
+      width: 280px;
   }
-  
+
+  .play-button {
+      font-size: 28px;
+      width: 40px;
+      height: 40px;
+  }
+
+  .video-title {
+      font-size: 10px;
+  }
+
+  .video-description {
+      font-size: 8px;
+  }
+}

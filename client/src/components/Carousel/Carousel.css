@@ -1,3 +1,4 @@
+/* Base Styles */
 .carousel {
     text-align: center;
     padding: 20px;
@@ -32,4 +33,69 @@
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #388e3c; /* Dark green text color */
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect */
+.carousel-slide:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+}
+
+/* Responsive Styles */
+
+/* Large Screens (Desktops > 1200px) */
+@media (min-width: 1200px) {
+    .carousel-slide {
+        height: 300px; /* Larger height for desktop view */
+        font-size: 28px;
+    }
+
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Tablets (768px - 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .carousel-slide {
+        height: 250px; /* Medium height for tablets */
+        font-size: 22px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Mobile Devices (less than 768px) */
+@media (max-width: 768px) {
+    .carousel-slide {
+        height: 180px; /* Smaller height for mobile devices */
+        font-size: 18px;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Extra Small Screens (less than 480px) */
+@media (max-width: 480px) {
+    .carousel-slide {
+        height: 150px; /* Compact height for extra small screens */
+        font-size: 16px;
+    }
+
+    .indicator {
+        width: 6px;
+        height: 6px;
+    }
 }

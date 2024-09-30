@@ -4,8 +4,8 @@ import './Testimonials.css';
 const Testimonials = () => {
   return (
     <div className="testimonial-section">
-      <h2 style={{marginLeft:"670px"}}>TESTIMONIAL</h2>
-      <p style={{marginLeft:"600px"}}>Featured Residential Projects Across India</p>
+      <h2>TESTIMONIAL</h2>
+      <p>Featured Residential Projects Across India</p>
       <p className="testimonial-intro" style={{marginLeft:"400px", color:"black"}}>
         When the age of a person exceeds 50 years, it becomes very important to take care of one’s health as she enters the senior citizen age. With age, the metabolism and functioning of the body become slow.
       </p>

@@ -21,8 +21,8 @@ const YoutubeVideos = () => {
   ];
   return (
     <div className="youtube-videos-container">
-      <h2 style={{marginRight:"800px"}}>YOUTUBE VIDEOS</h2>
-      <p style={{marginRight:"680px"}}>Featured Residential Projects Across India</p>
+      <h2>YOUTUBE VIDEOS</h2>
+      <p>Featured Residential Projects Across India</p>
       <div className="video-slider">
         <button className="slider-arrow left-arrow">{'<'}</button>
         {videos.map((video, index) => (
