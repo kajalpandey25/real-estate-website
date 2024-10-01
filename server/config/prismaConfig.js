@@ -1,4 +1,6 @@
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
+// config/prismaConfig.js
+import { PrismaClient } from '@prisma/client';
 
-export {prisma}
+const prisma = new PrismaClient();
+
+export { prisma }; // Ensure this line is present
