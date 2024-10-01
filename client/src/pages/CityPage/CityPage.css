@@ -33,12 +33,14 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  flex-wrap: wrap; /* Wrap on smaller screens */
 }
 
 .gallery-images {
   display: flex;
   position: relative;
   flex: 2;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .gallery-images img {
@@ -95,15 +97,16 @@
 
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
   gap: 10px;
   font-size: 1rem;
   color: #555;
-font-weight: bold;
+  font-weight: bold;
 }
 
 /* Suggested Properties and Commercial Projects Section */
-.suggested-properties, .commercial-projects {
+.suggested-properties,
+.commercial-projects {
   margin-bottom: 30px;
 }
 
@@ -111,6 +114,7 @@ font-weight: bold;
   display: flex;
   overflow-x: auto;
   gap: 15px;
+  padding: 10px 0; /* Vertical padding */
 }
 
 .property-card {
@@ -139,7 +143,7 @@ font-weight: bold;
   margin: 5px 0;
 }
 
-/* FAQ */
+/* FAQ Section */
 .faq-section {
   margin-top: 40px;
   padding: 20px;
@@ -180,4 +184,52 @@ font-weight: bold;
   color: #555;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .property-header h1 {
+      font-size: 2rem; /* Smaller header font size */
+  }
 
+  .property-header p {
+      font-size: 1rem; /* Smaller paragraph font size */
+  }
+
+  .gallery-images img {
+      width: 200px; /* Adjust image width for smaller screens */
+  }
+
+  .filter-buttons {
+      flex-direction: row; /* Change to row on smaller screens */
+      flex-wrap: wrap; /* Wrap buttons */
+  }
+
+  .filter-buttons button {
+      flex: 1 1 45%; /* Flexible button sizes */
+  }
+
+  .property-details h2 {
+      font-size: 1.5rem; /* Smaller subheading font size */
+  }
+
+  .property-cards {
+      flex-wrap: wrap; /* Allow wrapping of property cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .property-header h1 {
+      font-size: 1.5rem; /* Smaller header font size for extra small screens */
+  }
+
+  .property-card {
+      min-width: 90%; /* Make cards full width on small screens */
+  }
+
+  .faq-question {
+      font-size: 16px; /* Smaller font size for FAQ questions */
+  }
+
+  .faq-answer {
+      font-size: 14px; /* Smaller font size for FAQ answers */
+  }
+}

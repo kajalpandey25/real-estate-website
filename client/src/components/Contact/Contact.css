@@ -76,7 +76,8 @@
 
 /* 2nd  */
 .contact-us-container {
-  width: 80%;
+  width: 90%; /* Increased width for better responsiveness */
+  max-width: 1200px; /* Max width for larger screens */
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -86,6 +87,7 @@
 .contact-info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   margin-bottom: 20px;
 }
 
@@ -94,7 +96,8 @@
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  width: 30%;
+  flex: 1 1 30%; /* Allow flexible sizing */
+  margin: 10px; /* Margin for spacing between boxes */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -109,7 +112,7 @@
 }
 
 .office-info {
-  background:  #cbf49d;
+  background: #cbf49d;
   padding: 30px;
   text-align: center;
   margin-bottom: 30px;
@@ -117,8 +120,7 @@
 }
 
 .map-container {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 30px 0; /* Top and bottom margin */
 }
 
 .map-container img {
@@ -131,8 +133,9 @@
   padding: 30px;
   background: #f9f9f9;
   border-radius: 8px;
-  margin-left: 250px;
-  width: 50%;
+  margin: 0 auto; /* Center the form */
+  width: 100%; /* Full width for better responsiveness */
+  max-width: 600px; /* Max width for larger screens */
 }
 
 .contact-form form {
@@ -140,7 +143,8 @@
   flex-direction: column;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
@@ -155,11 +159,11 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
 }
 
 .contact-form button:hover {
   background-color: #86d42c;
-  font-weight: bold;
 }
 
 .customer-care {
@@ -169,4 +173,37 @@
   text-align: center;
   margin-top: 10px;
   border-radius: 50px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-info {
+      flex-direction: column; /* Stack boxes on smaller screens */
+      align-items: center; /* Center align */
+  }
+
+  .contact-box {
+      width: 100%; /* Full width for contact boxes */
+      max-width: 300px; /* Limit max width */
+  }
+
+  .contact-form {
+      width: 90%; /* More width on smaller screens */
+      margin: 0 auto; /* Center the form */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form input,
+  .contact-form textarea {
+      font-size: 14px; /* Smaller font size for inputs */
+  }
+
+  .contact-form button {
+      font-size: 14px; /* Smaller button text */
+  }
+
+  .customer-care {
+      font-size: 14px; /* Smaller font size for customer care text */
+  }
 }

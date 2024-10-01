@@ -1,92 +1,113 @@
-Testimonials.css
 .testimonial-section {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fff;
-  }
-  
-  .testimonial-section h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .testimonial-section p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #666;
-    text-align: center;
-  }
-  
-  .testimonial-intro {
-    max-width: 900px;
-    margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
 }
-  
-  .testimonial-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    gap: 50px;
-  }
-  
+
+.testimonial-section h2 {
+  font-size: 2rem; /* Adjusted for responsiveness */
+  margin-bottom: 10px;
+}
+
+.testimonial-section p {
+  margin: 10px 0;
+  font-size: 1rem; /* Adjusted for responsiveness */
+  color: #666;
+}
+
+.testimonial-intro {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px; 
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 20px; /* Reduced gap for smaller screens */
+}
+
+.testimonial-card {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px; /* Fixed width for desktop */
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card.highlight {
+  background-color: #a8ca80;
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card h3 {
+  font-size: 1.125rem; /* Adjusted for responsiveness */
+  margin: 10px 0;
+}
+
+.testimonial-card p {
+  font-size: 0.875rem; /* Adjusted for responsiveness */
+  color: #333;
+}
+
+.testimonial-card::before,
+.testimonial-card::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.testimonial-card::before {
+  left: -20px;
+}
+
+.testimonial-card::after {
+  right: -20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .testimonial-card {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-    cursor: pointer; /* Pointer cursor to indicate clickability */
+      width: 100%; /* Full width on smaller screens */
+      max-width: 300px; /* Set a max width for better appearance */
   }
 
-  
-  .testimonial-card img {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-bottom: 10px;
+  .testimonial-container {
+      gap: 10px; /* Smaller gap on mobile */
   }
-  .testimonial-card:hover {
-    transform: translateY(-10px); /* Move card upwards slightly on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+@media (max-width: 480px) {
+  .testimonial-section h2 {
+      font-size: 1.5rem; /* Smaller font size on very small screens */
   }
-  
-  .testimonial-card.highlight {
-    background-color: #a8ca80;
-    z-index: 3;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  .testimonial-section p {
+      font-size: 0.875rem; /* Smaller font size on very small screens */
   }
-  
-  .testimonial-card h3 {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-  
-  .testimonial-card p {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .testimonial-card::before,
-  .testimonial-card::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-  }
-  
-  .testimonial-card::before {
-    left: -20px;
-  }
-  
-  .testimonial-card::after {
-    right: -20px;
-  }
+}
