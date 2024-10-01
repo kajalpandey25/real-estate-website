@@ -67,45 +67,38 @@ const Header = () => {
 
       {/* Main Navigation Section */}
       <section className="h-wrapper" style={{ backgroundColor: "black" }}>
-        <div className="flexCenter innerWidth paddings h-container">
-          <OutsideClickHandler
-            onOutsideClick={() => {
-              setMenuOpened(false);
-            }}
-          >
-            <div
-              className="flexCenter h-menu"
-              style={getMenuStyles(menuOpened)}
-            >
-              <NavLink to="/city">Cities</NavLink>
-        
-              <NavLink to="/properties">Property Type</NavLink>
-
-              <div onClick={handleAddPropertyClick}>Add Property</div>
-              <AddPropertyModal
-                opened={modalOpened}
-                setOpened={setModalOpened}
-              />
-
-              {!isAuthenticated ? (
-                <button className="button" onClick={loginWithRedirect}>
-                  Login
-                </button>
-              ) : (
-                <ProfileMenu user={user} logout={logout} />
-              )}
-            </div>
-          </OutsideClickHandler>
-
-          {/* Menu Icon for Small Screens */}
-          <div
-            className="menu-icon"
-            onClick={() => setMenuOpened((prev) => !prev)}
-          >
-            <BiMenuAltRight size={30} />
+      <div className="flexCenter innerWidth paddings h-container">
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setMenuOpened(false);
+          }}
+        >
+          <div className={`flexCenter h-menu ${menuOpened ? 'open' : ''}`} style={{getMenuStyles}}>
+            {/* Always visible on larger screens */}
+            <NavLink to="/city" className="nav-link">Cities</NavLink>
+            <NavLink to="/properties" className="nav-link">Property Type</NavLink>
+            <div className="nav-link" onClick={handleAddPropertyClick}>Add Property</div>
+            <AddPropertyModal opened={modalOpened} setOpened={setModalOpened} />
+            {!isAuthenticated ? (
+              <button className="button" onClick={loginWithRedirect}>
+                Login
+              </button>
+            ) : (
+              <ProfileMenu user={user} logout={logout} />
+            )}
           </div>
+        </OutsideClickHandler>
+
+        {/* Menu Icon for Small Screens */}
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpened((prev) => !prev)}
+        >
+          <BiMenuAltRight size={30} />
         </div>
-      </section>
+      </div>
+    </section>
+
     </div>
   );
 };
