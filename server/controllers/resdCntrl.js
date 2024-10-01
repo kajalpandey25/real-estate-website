@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
+import Residency from "../models/Residency.js"; // Mongoose Residency model import karein
 
-import { prisma } from "../config/prismaConfig.js";
-
+// Create residency
 export const createResidency = asyncHandler(async (req, res) => {
   const {
     title,
@@ -16,48 +16,47 @@ export const createResidency = asyncHandler(async (req, res) => {
   } = req.body.data;
 
   console.log(req.body.data);
+  
   try {
-    const residency = await prisma.residency.create({
-      data: {
-        title,
-        description,
-        price,
-        address,
-        country,
-        city,
-        facilities,
-        image,
-        owner: { connect: { email: userEmail } },
-      },
+    const residency = new Residency({
+      title,
+      description,
+      price,
+      address,
+      country,
+      city,
+      facilities,
+      image,
+      owner: userEmail, // Assuming userEmail is the owner's email
     });
+
+    await residency.save();
 
     res.send({ message: "Residency created successfully", residency });
   } catch (err) {
-    if (err.code === "P2002") {
-      throw new Error("A residency with address already there");
+    // Check for unique validation error
+    if (err.code === 11000) {
+      throw new Error("A residency with this address already exists");
     }
     throw new Error(err.message);
   }
 });
 
-// function to get all the documents/residencies
+// Get all residencies
 export const getAllResidencies = asyncHandler(async (req, res) => {
-  const residencies = await prisma.residency.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  const residencies = await Residency.find().sort({ createdAt: -1 });
   res.send(residencies);
 });
 
-// function to get a specific document/residency
+// Get a specific residency
 export const getResidency = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
   try {
-    const residency = await prisma.residency.findUnique({
-      where: { id },
-    });
+    const residency = await Residency.findById(id);
+    if (!residency) {
+      return res.status(404).send({ message: "Residency not found" });
+    }
     res.send(residency);
   } catch (err) {
     throw new Error(err.message);
