@@ -7,3 +7,4 @@ router.post("/create", jwtCheck, createResidency)
 router.get("/allresd", getAllResidencies)
 router.get("/:id", getResidency)
 export {router as residencyRoute}
+
